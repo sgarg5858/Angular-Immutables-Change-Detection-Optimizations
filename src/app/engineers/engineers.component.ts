@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService, Engineer } from '../data.service';
-
+import {List} from 'immutable';
 @Component({
   selector: 'app-engineers',
   templateUrl: './engineers.component.html',
@@ -9,21 +9,21 @@ import { DataService, Engineer } from '../data.service';
 export class EngineersComponent implements OnInit {
 
   constructor(private dataService:DataService) { }
-  frontendEngineers:Engineer[]=[];
-  backendEngineers:Engineer[]=[];
+  frontendEngineers:List<Engineer> = List.of();
+  backendEngineers:List<Engineer>= List.of()
 
   ngOnInit(): void {
-    this.frontendEngineers = this.dataService.getEngineers('Frontend');
-    this.backendEngineers = this.dataService.getEngineers('Backend');
+    this.frontendEngineers = List.of(...this.dataService.getEngineers('Frontend'));
+    this.backendEngineers = List.of(...this.dataService.getEngineers('Backend'));
   }
   addEngineer(name:string,domain:'Frontend'|'Backend'){
     if(domain=='Frontend')
     {
-      this.frontendEngineers=[{id:this.frontendEngineers.length,name,skillLevel:55,domain},...this.frontendEngineers,]
+      this.frontendEngineers= this.frontendEngineers.unshift({id:this.frontendEngineers.size,name,skillLevel:55,domain})
     }
     else
     {
-      this.backendEngineers=[{id:this.backendEngineers.length,name,skillLevel:55,domain},...this.backendEngineers]
+      this.backendEngineers=this.backendEngineers.unshift({id:this.frontendEngineers.size,name,skillLevel:55,domain})
     }
   }
 

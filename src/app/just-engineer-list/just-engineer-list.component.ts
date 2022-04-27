@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
+import { List } from 'immutable';
 import { Engineer } from '../data.service';
 
 @Component({
@@ -10,11 +11,10 @@ import { Engineer } from '../data.service';
 export class JustEngineerListComponent implements OnInit {
 
   constructor() { }
-  @Input() engineers:Engineer[] = [];
+  @Input() engineers:List<Engineer> = List.of();
 
   ngOnInit(): void {
   }
-
   // getSalary(skillLevel:number,salary:number=1):number
   // {
   //   if(skillLevel<2) {
