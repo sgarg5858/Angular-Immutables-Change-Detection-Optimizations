@@ -12,30 +12,13 @@ export class EngineerListComponent implements OnInit {
 
   @Input() label:string="";
   @Input() engineers:Engineer[] = [];
-  @Output() addThisEngineer = new EventEmitter<string>();
-
-  engineer = new FormControl('',[Validators.required]);
-
-  addEngineer()
-  {
-    if(this.engineer.valid)
-    {
-      this.addThisEngineer.emit(this.engineer.value);
-    }
-  }
+  @Output() addThisEngineer= new EventEmitter<string>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  getSalary(skillLevel:number,salary:number=1):number
-  {
-    if(skillLevel<2) {
-      console.log(this.label);
-      return salary;
-    }
-    return this.getSalary(skillLevel-1,salary*skillLevel);
-  }
+  
 
 }
