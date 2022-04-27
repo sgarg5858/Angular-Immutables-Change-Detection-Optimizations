@@ -15,13 +15,13 @@ export class JustEngineerListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getSalary(skillLevel:number,salary:number=1):number
-  {
-    if(skillLevel<2) {
-      console.log("Calculating")
-      return salary;
-    }
-    return this.getSalary(skillLevel-1,salary*skillLevel);
-  }
+  // getSalary(skillLevel:number,salary:number=1):number
+  // {
+  //   if(skillLevel<2) {
+  //     console.log("Calculating")
+  //     return salary;
+  //   }
+  //   return this.getSalary(skillLevel-1,salary*skillLevel);
+  // }
 
 }
