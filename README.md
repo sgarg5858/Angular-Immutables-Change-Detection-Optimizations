@@ -21,6 +21,20 @@ Let's do these fixes one by one
 
 2. 2-use-on-push-just-for-engineer-list
 
-3. 3-replace-function-with-pipe
+Takes 40-80 ms for each CD cycle, now as it only triggers for one engineer list.but triggers on every input (that is bad)
 
-4. 4-split-engineer-list-further-and-use-on-push
+3. 3-split-engineer-list-further-and-use-on-push
+
+With this it will only calculate salary on adding engineer, that will do frame drop, confirm all via Angular Devtools
+
+4. 4-replace-function-with-pipe
+
+Takes 1-2ms
+
+With this everything works fine, As it doesn't recompute salaries as pipes are pure functions.
+
+5. 5-use-immutables
+
+Use Immutable.js library
+
+
