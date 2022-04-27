@@ -1,12 +1,5 @@
 <h1>{{label}}</h1>
 
-<div>
-    <input [formControl]="engineer" type="text">
-    <button (click)="addEngineer()">Add</button>
-</div>
+<app-name-input (addThisEngineer)="addThisEngineer.next($event)"></app-name-input>
 
-<ul>
-    <li *ngFor="let engineer of engineers">
-        {{engineer.name}} - {{getSalary(engineer.skillLevel)}}
-    </li>
-</ul>
+<app-just-engineer-list [engineers]="engineers"></app-just-engineer-list>

@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { EngineersComponent } from './engineers/engineers.component';
 import { EngineerListComponent } from './engineer-list/engineer-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NameInputComponent } from './name-input/name-input.component';
+import { JustEngineerListComponent } from './just-engineer-list/just-engineer-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EngineersComponent,
-    EngineerListComponent
+    EngineerListComponent,
+    NameInputComponent,
+    JustEngineerListComponent
   ],
   imports: [
     BrowserModule,
