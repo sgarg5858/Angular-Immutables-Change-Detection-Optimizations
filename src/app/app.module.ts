@@ -8,6 +8,7 @@ import { EngineerListComponent } from './engineer-list/engineer-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NameInputComponent } from './name-input/name-input.component';
 import { JustEngineerListComponent } from './just-engineer-list/just-engineer-list.component';
+import { CalculateSalaryPipe } from './calculate-salary.pipe';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { JustEngineerListComponent } from './just-engineer-list/just-engineer-li
     EngineersComponent,
     EngineerListComponent,
     NameInputComponent,
-    JustEngineerListComponent
+    JustEngineerListComponent,
+    CalculateSalaryPipe
   ],
   imports: [
     BrowserModule,
