@@ -1,1 +1,15 @@
-<p>engineers works!</p>
+<div style="display:  flex;flex-direction: row;">
+    <app-engineer-list
+[label]="'Frontend Engineers'"
+[engineers]="frontendEngineers"
+(addThisEngineer)="addEngineer($event,'Frontend')"
+>
+</app-engineer-list>
+
+<app-engineer-list
+[label]="'Backend Engineers'"
+[engineers]="backendEngineers"
+(addThisEngineer)="addEngineer($event,'Backend')"
+>
+</app-engineer-list>
+</div>
