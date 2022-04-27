@@ -1,1 +1,12 @@
-<p>engineer-list works!</p>
+<h1>{{label}}</h1>
+
+<div>
+    <input [formControl]="engineer" type="text">
+    <button (click)="addEngineer()">Add</button>
+</div>
+
+<ul>
+    <li *ngFor="let engineer of engineers">
+        {{engineer.name}} - {{getSalary(engineer.skillLevel)}}
+    </li>
+</ul>
