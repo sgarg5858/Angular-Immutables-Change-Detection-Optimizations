@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, Output,EventEmitter, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { List } from 'immutable';
 import { Engineer } from '../data.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { Engineer } from '../data.service';
 export class EngineerListComponent implements OnInit {
 
   @Input() label:string="";
-  @Input() engineers:Engineer[] = [];
+  @Input() engineers:List<Engineer> = List.of();
   @Output() addThisEngineer= new EventEmitter<string>();
 
   constructor() { }
