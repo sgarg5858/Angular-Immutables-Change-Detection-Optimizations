@@ -7,7 +7,7 @@ import { Engineer } from '../data.service';
   selector: 'app-engineer-list',
   templateUrl: './engineer-list.component.html',
   styleUrls: ['./engineer-list.component.scss'],
-  changeDetection:ChangeDetectionStrategy.OnPush
+  // changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class EngineerListComponent implements OnInit {
 
