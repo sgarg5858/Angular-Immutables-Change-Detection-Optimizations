@@ -37,4 +37,8 @@ With this everything works fine, As it doesn't recompute salaries as pipes are p
 
 Use Immutable.js library
 
+6. 7-producing-expression-changed-error
+
+When View Creation Process leads to data model modification then this error is thrown. Like when we change some data in ngAfterViewInit
+
 
